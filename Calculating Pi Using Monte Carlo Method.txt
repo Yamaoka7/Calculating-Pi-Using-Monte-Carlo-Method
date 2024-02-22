@@ -1,0 +1,17 @@
+import random
+
+def estimate_pi(n):
+    inside_circle = 0
+    total_points = 0
+    for _ in range(n):
+        x = random.uniform(0, 1)
+        y = random.uniform(0, 1)
+        if x**2 + y**2 <= 1:
+            inside_circle += 1
+        total_points += 1
+    return 4 * inside_circle / total_points
+
+# Example usage:
+num_points = 1000000
+pi_estimate = estimate_pi(num_points)
+print("Estimated value of pi:", pi_estimate)
